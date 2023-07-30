@@ -4,12 +4,12 @@ import axios from 'axios';
 const Episode = ({ episode }) => {
   return (
     <>
-    <Link href={'/episodes'}>Back</Link>
-    <div>
-      <h2>
-        {episode.name} - date: {episode.air_date}
-      </h2>
-    </div>
+      <Link href={'/episodes'}>Back</Link>
+      <div>
+        <h2>
+          {episode.name} - date: {episode.air_date}
+        </h2>
+      </div>
     </>
   );
 };
