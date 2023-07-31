@@ -1,13 +1,13 @@
 import { useRouter } from 'next/router';
 
-const Blog = () => {
+const Complexity = () => {
 
     const router = useRouter();
     const { params } = router?.query;
 
     return ( 
-        <h1>Blog Main Page {JSON.stringify(params)}</h1>
+        <h1>Complexity Main Page {JSON.stringify(params)}</h1>
      );
 }
  
-export default Blog;
+export default Complexity;

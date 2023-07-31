@@ -1,21 +1,22 @@
 {
-  "posts": [
+  "blogs": [
     {
+      "title": "orange",
+      "id": 0,
+      "category": "fruits"
+    },
+    {
+      "title": "apple",
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "category": "doctors"
+    },
+    {
+      "title": "banana",
+      "id": 2,
+      "category": "fruits"
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
+
   "products": [
     {
       "id": 1,
