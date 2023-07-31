@@ -2,15 +2,12 @@ import Link from 'next/link';
 import axios from 'axios';
 
 const Product = ({ product }) => {
-  console.log('====================================');
-  console.log(product);
-  console.log('====================================');
   return (
     <>
     <Link href={'/products'}>Back</Link>
     <div>
       <h2>
-        {product.name} - date: {product.air_date}
+        {product?.id} - {product?.price?.toLocaleString()} - {product?.title} - {product?.description}
       </h2>
     </div>
     </>
@@ -28,18 +25,19 @@ export async function getStaticPaths() {
   });
   return {
     paths: paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
 export async function getStaticProps(context) {
   const { params } = context;
   const { data } = await axios.get(
-    `http://localhost:4000/products/${params?.episodeId}`
+    `http://localhost:4000/products/${params?.productId}`
   );
   return {
     props: {
-      episode: data,
+      product: data,
     },
+    revalidate: 30,
   };
 }
