@@ -36,5 +36,14 @@
       "price": 3000,
       "description": "three three three"
     }
+  ],
+
+  "profile": [
+    {
+      "id": 1,
+      "title": "product 1",
+      "price": 1000,
+      "description": "one one one"
+    }
   ]
 }
