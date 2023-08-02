@@ -4,7 +4,7 @@ import axios from 'axios';
 const Product = ({ product }) => {
   return (
     <>
-    <Link href={'/products'}>Back</Link>
+    <Link href={'/panel/products'}>Back</Link>
     <div>
       <h2>
         {product?.id} - {product?.price?.toLocaleString()} - {product?.title} - {product?.description}

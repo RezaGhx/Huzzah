@@ -6,7 +6,7 @@ export default function Home() {
   const router = useRouter();
 
   const clickHandler = () => {
-    router.push('/complexities');
+    router.push('/panel/complexities');
   };
 
   return (
@@ -14,11 +14,11 @@ export default function Home() {
       <h1>Home Page</h1>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         <button onClick={clickHandler}>Complexities</button>
-        <Link href={'/users'}>Users</Link>
-        <Link href={'/episodes'}>Episodes</Link>
-        <Link href={'/posts'}>Posts</Link>
-        <Link href={'/products'}>Products</Link>
-        <Link href={'/blogs'}>blogs</Link>
+        <Link href={'/panel/users'}>Users</Link>
+        <Link href={'/panel/episodes'}>Episodes</Link>
+        <Link href={'/panel/posts'}>Posts</Link>
+        <Link href={'/panel/products'}>Products</Link>
+        <Link href={'/panel/blogs'}>blogs</Link>
       </div>
     </div>
   );

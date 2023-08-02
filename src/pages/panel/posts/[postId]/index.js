@@ -9,10 +9,10 @@ const Post = () => {
     <>
       <h1>Post No.{postId}</h1>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <Link href={'/posts'}>Back</Link>
-        <Link href={`/posts/${postId}/review/1`}>Review 1</Link>
-        <Link href={`/posts/${postId}/review/2`}>Review 2</Link>
-        <Link href={`/posts/${postId}/review/3`}>Review 3</Link>
+        <Link href={'/panel/posts'}>Back</Link>
+        <Link href={`/panel/posts/${postId}/review/1`}>Review 1</Link>
+        <Link href={`/panel/posts/${postId}/review/2`}>Review 2</Link>
+        <Link href={`/panel/posts/${postId}/review/3`}>Review 3</Link>
       </div>
     </>
   );

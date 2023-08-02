@@ -4,7 +4,7 @@ import axios from 'axios';
 const Episode = ({ episode }) => {
   return (
     <>
-      <Link href={'/episodes'}>Back</Link>
+      <Link href={'/panel/episodes'}>Back</Link>
       <div>
         <h2>
           {episode.name} - date: {episode.air_date}

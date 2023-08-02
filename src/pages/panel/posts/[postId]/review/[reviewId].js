@@ -11,7 +11,7 @@ const Review = () => {
         Review No.{reviewId} form Post No.{postId}
       </h1>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <Link href={'/posts'}>Back</Link>
+        <Link href={'/panel/posts'}>Back</Link>
       </div>
     </>
   );
