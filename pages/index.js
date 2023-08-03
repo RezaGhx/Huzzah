@@ -10,16 +10,16 @@ export default function Home() {
   };
 
   return (
-    <div className={'styles.container'}>
-      <h1>Home Page</h1>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div>
+      <h1 className={'text-2xl'}>Home Page</h1>
+      {/* <div style={{ display: 'flex', flexDirection: 'column' }}>
         <button onClick={clickHandler}>Complexities</button>
         <Link href={'/panel/users'}>Users</Link>
         <Link href={'/panel/episodes'}>Episodes</Link>
         <Link href={'/panel/posts'}>Posts</Link>
         <Link href={'/panel/products'}>Products</Link>
         <Link href={'/panel/blogs'}>blogs</Link>
-      </div>
+      </div> */}
     </div>
   );
 }

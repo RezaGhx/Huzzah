@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Link from 'next/link';
-import Item from 'src/components/item';
+import Item from 'components/item';
 
 const Episodes = ({ episodeList }) => {
   return (
