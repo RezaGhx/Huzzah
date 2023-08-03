@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className={'text-2xl'}>Home Page</h1>
+      <h1 className={'bg-teal-700 text-2xl'}>Home Page</h1>
       {/* <div style={{ display: 'flex', flexDirection: 'column' }}>
         <button onClick={clickHandler}>Complexities</button>
         <Link href={'/panel/users'}>Users</Link>
