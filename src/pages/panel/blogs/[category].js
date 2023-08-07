@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Item from '@/components/item';
+import Item from 'components/item';
 
 const Category = ({ blogs, category }) => {
   return (

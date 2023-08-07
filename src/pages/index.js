@@ -1,15 +1,17 @@
-import styles from '../styles/Home.module.css';
-// import { todos } from '@/constant/todos';
-import { CheckIcon, PencilAltIcon, TrachIcon } from '@heroicons/react/outline';
+// import styles from 'styles/Home.module.css';
+// import { todos } from 'constant/todos';
+// import { CheckIcon, PencilAltIcon, TrachIcon } from '@heroicons/react/outline';
 import useSWR from 'swr';
+import axios from 'axios';
 
 const fetcher = async () => {
-  const { data } = await axios.get('http://localhost:3000/api/todos');
+  const { data } = await axios.get('/api/todos');
   return data;
 };
 
 export default function Home() {
   const { data, error } = useSWR('getTodos', fetcher);
+  console.log(data);
   if (error) return <div>error macro</div>;
   if (!data) return <div>loading...</div>;
 
@@ -37,19 +39,16 @@ export default function Home() {
                 <span>Task {item.title}</span>
                 <div className="flex gap-x-3 items-center">
                   <button>
-                    <CheckIcon className="w-6 h-6 stroke-green-400" />
+                    {/* <CheckIcon className="w-6 h-6 stroke-green-400" /> */}
                   </button>
                   <button>
-                    <PencilAltIcon className="w-6 h-6 stroke-red-400" />
+                    {/* <PencilAltIcon className="w-6 h-6 stroke-red-400" /> */}
                   </button>
                   <button>
-                    <TrachIcon className="w-6 h-6 stroke-blue-400" />
+                    {/* <TrachIcon className="w-6 h-6 stroke-blue-400" /> */}
                   </button>
                 </div>
               </div>
-              // <h1 key={item.id} className={'bg-teal-100 text-blue-900 text-xl'}>
-              //   Course No.{item.id} - {item.title}
-              // </h1>
             ))}
           </div>
         </section>

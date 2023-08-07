@@ -1,9 +1,7 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "jsx": "preserve",
-    "checkJs": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "checkJs": true
   }
 }
