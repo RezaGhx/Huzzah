@@ -1,5 +1,5 @@
 // import styles from 'styles/Home.module.css';
-// import { CheckIcon, PencilAltIcon, TrachIcon } from '@heroicons/react/outline';
+import { TrashIcon, PencilAltIcon, CheckIcon } from '@heroicons/react/solid';
 // import useSWR from 'swr';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -29,8 +29,7 @@ export default function Home() {
   const deleteTodo = (id) => {
     axios
       .delete(`/api/todos/${id}`)
-      .then(({data}) => {
-        console.log(data);
+      .then(({ data }) => {
         setData(data);
         setLoading(false);
       })
@@ -67,16 +66,13 @@ export default function Home() {
                 </span>
                 <div className={'flex gap-x-3 items-center'}>
                   <button>
-                    {/* <CheckIcon className={"w-6 h-6 stroke-green-400"} /> */}
-                    CONFIRM
-                  </button>
-                  <button>
-                    {/* <PencilAltIcon className={"w-6 h-6 stroke-red-400"} /> */}
-                    EDIT
+                    <CheckIcon className={'w-6 h-6 stroke-green-400'} />
                   </button>
                   <button onClick={() => deleteTodo(item.id)}>
-                    {/* <TrachIcon className={"w-6 h-6 stroke-blue-400"} /> */}
-                    DELETE
+                    <TrashIcon className={'w-6 h-6 stroke-red-400'} />
+                  </button>
+                  <button>
+                    <PencilAltIcon className={'w-6 h-6 stroke-blue-400'} />
                   </button>
                 </div>
               </div>
