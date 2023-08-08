@@ -31,7 +31,7 @@ export default function Home() {
       .delete(`/api/todos/${id}`)
       .then(({data}) => {
         console.log(data);
-        setData(data?.todos);
+        setData(data);
         setLoading(false);
       })
       .catch((error) => console.log(error));
