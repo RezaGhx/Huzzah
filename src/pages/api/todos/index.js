@@ -1,14 +1,15 @@
-import { todos } from 'constant/todos';
+import dbConnect from 'server/utils/dbConnect';
+import Todo from 'server/models/todo';
 
-export default function handler(req, res) {
-  if (req?.method === 'POST') {
-    const newTodo = {
-      id: Date.now(),
-      title: req?.body?.value,
-    };
-    todos?.push(newTodo);
-    return res.status(201).json({ message: 'با موفقیت اضافه شد.', todos });
-  } else if (req?.method === 'GET') {
+dbConnect();
+
+export default async function handler(req, res) {
+  const { method, body } = req;
+  if (method === 'POST') {
+    await Todo.create(body?.formData);
+    const todos = await Todo.find({});
+  } else if (method === 'GET') {
+    const todos = await Todo.find({});
     return res.status(200).json({ todos });
   }
 }

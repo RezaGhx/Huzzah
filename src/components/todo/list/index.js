@@ -5,7 +5,7 @@ const List = ({ data, onDelete }) => {
     <div className={'w-full max-w-screen-md bg-gray-100 p-2 md:p-4 rounded-xl'}>
       {data?.todos?.map((item) => (
         <div
-          key={item.id}
+          key={item.title}
           className={
             'flex items-center justify-between border border-gray-300 mb-4 p-5 md:p-10 rounded-xl hover:bg-gray-200'
           }

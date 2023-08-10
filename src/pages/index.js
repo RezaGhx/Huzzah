@@ -40,9 +40,9 @@ export default function Home() {
   const addTodo = (e, formData) => {
     e.preventDefault();
     axios
-      .post(`/api/todos/`, formData)
+      .post(`/api/todos/`, { formData })
       .then(({ data }) => {
-        setData(data);
+        setData(data?.todos);
         setLoading(false);
       })
       .catch((error) => console.log(error));
