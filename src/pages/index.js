@@ -37,10 +37,10 @@ export default function Home() {
       .catch((error) => console.log(error));
   };
 
-  const addTodo = (e, value) => {
+  const addTodo = (e, formData) => {
     e.preventDefault();
     axios
-      .post(`/api/todos/`, { danzare: value })
+      .post(`/api/todos/`, formData)
       .then(({ data }) => {
         setData(data);
         setLoading(false);
@@ -60,7 +60,7 @@ export default function Home() {
         </h1>
       </nav>
       <div className={'container p-2 xl:max-w-screen-xl mx-auto'}>
-        <section className={'flex items-center justify-center'}>
+        <section className={'flex md:flex-row md:items-start md:justify-center gap-x-8 gap-y-8 flex-col'}>
           <Add submitHandler={addTodo} />
           <List data={data} onDelete={deleteTodo} />
         </section>
