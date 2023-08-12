@@ -7,10 +7,11 @@ export default async function handler(req, res) {
   console.log('سلاااااااااااااااااااااااااااااام', req.query);
   const { todoId } = req?.query;
   if (req?.method === 'DELETE') {
-    await Todo.delete(todoId);
+    await Todo.findByIdAndDelete(todoId);
     return res.status(200).json({ todos });
     // const index = Todo.findIndex((todo) => todo.id === parseInt(todoId));
     // todos.splice(index, 1);
     // return res.status(200).json({ message: 'Deleted successfully!', todos });
   }
 }
+  

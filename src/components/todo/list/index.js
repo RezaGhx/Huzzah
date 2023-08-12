@@ -5,7 +5,7 @@ const List = ({ data, onDelete }) => {
     <div className={'w-full max-w-screen-md bg-gray-100 p-2 md:p-4 rounded-xl'}>
       {data?.todos?.map((item) => (
         <div
-          key={item.title}
+          key={item._id}
           className={
             'flex items-center justify-between border border-gray-300 mb-4 p-5 md:p-10 rounded-xl hover:bg-gray-200'
           }
@@ -15,7 +15,7 @@ const List = ({ data, onDelete }) => {
             <button>
               <CheckIcon className={'w-6 h-6 stroke-green-400'} />
             </button>
-            <button onClick={() => onDelete(item.id)}>
+            <button onClick={() => onDelete(item._id)}>
               <TrashIcon className={'w-6 h-6 stroke-red-400'} />
             </button>
             <button>
