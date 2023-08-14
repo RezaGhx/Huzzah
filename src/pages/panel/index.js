@@ -2,11 +2,12 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const Panel = ({ children }) => {
-  const router = useRouter();
+    const router = useRouter();
 
   const clickHandler = () => {
     router.push('/panel/complexities');
   };
+
   return (
     <>
       <nav>
@@ -17,6 +18,9 @@ const Panel = ({ children }) => {
           <Link href={'/panel/posts'}>Posts</Link>
           <Link href={'/panel/products'}>Products</Link>
           <Link href={'/panel/blogs'}>blogs</Link>
+          <Link className={'text-2xl'} href={'/panel/todo'}>
+            todo mini app
+          </Link>
         </div>
       </nav>
       {children}

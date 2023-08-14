@@ -8,7 +8,7 @@ export default async function handler(req, res) {
   if (method === 'POST') {
     await Todo.create(body?.formData);
     const todos = await Todo.find({});
-    return res.status(200).json(todos);
+    return res.status(200).json({ todos });
   } else if (method === 'GET') {
     const todos = await Todo.find({});
     return res.status(200).json({ todos });
