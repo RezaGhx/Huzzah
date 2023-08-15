@@ -10,6 +10,10 @@ const todoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  isCompleted: {
+    type: Boolean,
+    required: true,
+  },
 });
 
 export default mongoose.models.Todo || mongoose.model('Todo', todoSchema);
