@@ -1,5 +1,11 @@
 import { useRouter } from 'next/router';
-import { TrashIcon, PencilAltIcon, CheckIcon, ClipboardListIcon } from '@heroicons/react/solid';
+import {
+  TrashIcon,
+  PencilAltIcon,
+  CheckIcon,
+  ClipboardListIcon,
+  XIcon,
+} from '@heroicons/react/solid';
 
 const List = ({ data, onDelete }) => {
   const router = useRouter();
@@ -19,7 +25,11 @@ const List = ({ data, onDelete }) => {
           <span className={'text-4xl text-neutral-500'}>Task {item.title}</span>
           <div className={'flex gap-x-3 items-center'}>
             <button>
-              <CheckIcon className={'w-6 h-6 stroke-green-400'} />
+              {item?.isCompleted ? (
+                <CheckIcon className={'w-6 h-6 stroke-green-400'} />
+              ) : (
+                <XIcon className={'w-6 h-6 stroke-red-400'} />
+              )}
             </button>
             <button onClick={() => onDelete(item._id)}>
               <TrashIcon className={'w-6 h-6 stroke-red-400'} />

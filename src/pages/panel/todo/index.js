@@ -18,7 +18,6 @@ export default function Todo() {
   }, []);
 
   const deleteTodo = (id) => {
-    console.log(id);
     axios
       .delete(`/api/todos/${id}`)
       .then(({ data }) => {
