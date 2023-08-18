@@ -9,7 +9,6 @@ const Add = ({ submitHandler, isEdit, setIsEdit, task, setTask }) => {
   useEffect(() => {
     if (isEdit) {
       setFormData(task);
-      console.log(task, formData);
       setVisible(true);
     }
   }, [isEdit]);

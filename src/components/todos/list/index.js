@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 import {
   TrashIcon,
   PencilAltIcon,
@@ -8,10 +8,6 @@ import {
 } from '@heroicons/react/solid';
 
 const List = ({ data, onDelete, isEdit, setIsEdit, setTask }) => {
-  const router = useRouter();
-  const detailHandler = (title) => {
-    router.push(`/panel/todo/${title}`);
-  };
 
   return (
     <div className={'w-full max-w-screen-md bg-gray-100 p-2 md:p-4 rounded-xl'}>
@@ -22,6 +18,7 @@ const List = ({ data, onDelete, isEdit, setIsEdit, setTask }) => {
             'flex items-center justify-between border border-gray-300 mb-4 p-5 md:p-10 rounded-xl hover:bg-gray-200 cursor-pointer'
           }
         >
+          <Link component={'a'} href={`todos/${item?._id}`}>
           <span
             className={`text-4xl ${
               item?.isCompleted ? 'text-neutral-400' : 'text-neutral-900'
@@ -29,6 +26,7 @@ const List = ({ data, onDelete, isEdit, setIsEdit, setTask }) => {
           >
             Task {item.title}
           </span>
+          </Link>
           <div className={'flex gap-x-3 items-center'}>
             <button onClick={() => onDelete(item._id)}>
               <TrashIcon className={'w-6 h-6 text-red-400'} />
@@ -42,9 +40,6 @@ const List = ({ data, onDelete, isEdit, setIsEdit, setTask }) => {
               disabled={isEdit}
             >
               <PencilAltIcon className={'w-6 h-6 text-yellow-400'} />
-            </button>
-            <button onClick={() => detailHandler(item.title)}>
-              <ClipboardListIcon className={'w-6 h-6 text-blue-400'} />
             </button>
           </div>
         </div>
