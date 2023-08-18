@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Header from 'components/layout/header';
+import Layout from 'components/layout';
 import List from 'components/panel/todos/list';
 import Add from 'components/panel/todos/add';
 import Todo from 'server/models/todo';
@@ -15,7 +15,6 @@ export default function Todos({ todos }) {
       .delete(`/api/todos/${id}`)
       .then(({ data }) => {
         setData(data?.todos);
-        // setData(data?.filter((item) => item?.id !== parseInt(id)));
       })
       .catch((error) => console.log(error));
   };
@@ -46,8 +45,7 @@ export default function Todos({ todos }) {
   };
 
   return (
-    <div className={'bg=gray-50 min-h-screen'}>
-      <Header />
+    <Layout>
       <div className={'container p-2 xl:max-w-screen-xl mx-auto'}>
         <section
           className={
@@ -70,7 +68,7 @@ export default function Todos({ todos }) {
           />
         </section>
       </div>
-    </div>
+    </Layout>
   );
 }
 

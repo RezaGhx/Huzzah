@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Layout from 'components/layout';
 import { getTodoDetails } from 'pages/api/todos/[todoId]';
 
 export default function Details({ todo }) {
   console.log(todo);
 
   return (
+    <Layout>
     <div className={'bg=gray-50 min-h-screen tex'}>
       <div className={'container p-2 xl:max-w-screen-xl mx-auto'}>
         <section
@@ -19,6 +21,7 @@ export default function Details({ todo }) {
         </section>
       </div>
     </div>
+    </Layout>
   );
 }
 
