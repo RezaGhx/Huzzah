@@ -19,6 +19,9 @@ module.exports = {
     //   'gray-light': '#d3dce6',
     // },
   },
+  variants: {
+    opacity: ({ after }) => after(['disabled']),
+  },
   plugins: [],
   // darkMode: ['class', '[data-mode="dark"]'],
 };

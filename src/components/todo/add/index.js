@@ -1,12 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const Add = ({ submitHandler }) => {
+const Add = ({ submitHandler, isEdit, setIsEdit, task, setTask }) => {
   const [visible, setVisible] = useState(false);
-  const [formData, setFormData] = useState({});
-  const [isCompleted, setIsCompleted] = useState(false);
+  const [formData, setFormData] = useState({
+    isCompleted: false,
+  });
+
+  useEffect(() => {
+    if (isEdit) {
+      setFormData(task);
+      console.log(task, formData);
+      setVisible(true);
+    }
+  }, [isEdit]);
 
   const onChangeHandler = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value, isCompleted });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
@@ -25,7 +34,7 @@ const Add = ({ submitHandler }) => {
       ) : (
         <form
           className={'w-full max-w-md bg-gray-100 p-2 md:p-4 rounded-xl'}
-          onSubmit={(e) => submitHandler(e, formData)}
+          onSubmit={(e) => submitHandler(e, formData, isEdit)}
         >
           <div className={'mb-4'}>
             <label
@@ -76,13 +85,20 @@ const Add = ({ submitHandler }) => {
               role="switch"
               id="todo-completed"
               name={'isCompleted'}
-              onChange={() => setIsCompleted(!isCompleted)}
-              value={isCompleted}
+              onChange={() =>
+                setFormData({
+                  ...formData,
+                  isCompleted: !formData?.isCompleted,
+                })
+              }
+              value={formData?.isCompleted}
             />
           </div>
           <div className={'flex items-center gap-x-4 mt-10'}>
             <button
               onClick={() => {
+                setIsEdit(false);
+                setTask({});
                 setVisible(false);
                 setFormData({});
               }}
