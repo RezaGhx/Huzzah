@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import List from 'components/todos/list';
-import Add from 'components/todos/add';
+import Header from 'components/layout/header';
+import List from 'components/panel/todos/list';
+import Add from 'components/panel/todos/add';
 import Todo from 'server/models/todo';
 
 export default function Todos({ todos }) {
@@ -46,13 +47,7 @@ export default function Todos({ todos }) {
 
   return (
     <div className={'bg=gray-50 min-h-screen'}>
-      <nav
-        className={'w-full bg-white shadow-sm flex justify-center py-4 mb-6'}
-      >
-        <h1 className={'font-thin text-6xl text-neutral-600 p-10'}>
-          TodoList App Using NextJS & TailwindCSS
-        </h1>
-      </nav>
+      <Header />
       <div className={'container p-2 xl:max-w-screen-xl mx-auto'}>
         <section
           className={
