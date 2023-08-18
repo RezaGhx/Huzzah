@@ -18,7 +18,7 @@ const Panel = ({ children }) => {
           <Link href={'/panel/posts'}>Posts</Link>
           <Link href={'/panel/products'}>Products</Link>
           <Link href={'/panel/blogs'}>blogs</Link>
-          <Link className={'text-2xl'} href={'/panel/todo'}>
+          <Link className={'text-2xl'} href={'/panel/todos'}>
             todo mini app
           </Link>
         </div>
