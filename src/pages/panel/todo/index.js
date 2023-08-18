@@ -24,6 +24,7 @@ export default function Todo() {
       .delete(`/api/todos/${id}`)
       .then(({ data }) => {
         setData(data);
+        // setData(data?.filter((item) => item?.id !== parseInt(id)));
         setLoading(false);
       })
       .catch((error) => console.log(error));
@@ -38,7 +39,7 @@ export default function Todo() {
     axios
       .post('/api/todos', { formData })
       .then(({ data }) => {
-        setData(data?.todos);
+        setData(data);
         setLoading(false);
       })
       .catch((error) => console.log(error));
@@ -49,7 +50,7 @@ export default function Todo() {
     axios
       .put(`/api/todos/${formData?._id}`, { formData })
       .then(({ data }) => {
-        setData(data?.todos);
+        setData(data);
         setLoading(false);
         setIsEdit(false);
       })
