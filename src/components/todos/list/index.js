@@ -11,7 +11,7 @@ const List = ({ data, onDelete, isEdit, setIsEdit, setTask }) => {
 
   return (
     <div className={'w-full max-w-screen-md bg-gray-100 p-2 md:p-4 rounded-xl'}>
-      {data?.todos?.map((item) => (
+      {data?.map((item) => (
         <div
           key={item._id}
           className={
