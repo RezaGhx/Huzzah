@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Layout from 'components/layout';
 import { getTodoDetails } from 'pages/api/todos/[todoId]';
+import dbConnect from 'server/utils/dbConnect';
 
 export default function Details({ todo }) {
   console.log(todo);
@@ -26,8 +27,8 @@ export default function Details({ todo }) {
 }
 
 export async function getServerSideProps(context) {
+  dbConnect();
   const { query } = context;
-
   const todo = await getTodoDetails(query);
 
   return {

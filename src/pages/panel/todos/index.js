@@ -4,6 +4,7 @@ import Layout from 'components/layout';
 import List from 'components/panel/todos/list';
 import Add from 'components/panel/todos/add';
 import Todo from 'server/models/todo';
+import dbConnect from 'server/utils/dbConnect';
 
 export default function Todos({ todos }) {
   const [data, setData] = useState(todos);
@@ -73,6 +74,7 @@ export default function Todos({ todos }) {
 }
 
 export async function getServerSideProps(context) {
+  dbConnect();
   const todos = await Todo.find({});
   console.log(todos);
   return {
