@@ -18,7 +18,7 @@ const Header = () => {
         >
           <li>
             <Link href="/">Home</Link>
-            <Link href="/todos">Todos</Link>
+            <Link href="/protectedSSR">ProtectedSSR</Link>
             <Link href="/profile">Profile</Link>
             {!session && status !== 'loading' && (
               <button onClick={() => signIn('github')}>SignIn</button>
