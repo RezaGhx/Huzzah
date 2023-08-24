@@ -12,6 +12,26 @@ export const authOptions = {
     }),
   ],
   adapter: MongoDBAdapter(clientPromise),
+  session: {
+    strategy: 'jwt',
+  },
+  jwt:{
+    secret: process.env.SECRET_JWT,
+  },
+  callbacks: {
+    async session({ session, token, user }) {
+      session.accessToken = token.accessToken;
+      session.user.id = token.id;
+      return session;
+    },
+    async jwt({ token, user, account, profile, isNewUser }) {
+      if (user) {
+        token.id = user.id;
+        token.accessToken = account.access_token;
+      }
+      return token;
+    }
+  }
 };
 
 export default NextAuth(authOptions);
