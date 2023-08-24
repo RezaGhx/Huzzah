@@ -18,6 +18,12 @@ module.exports = {
     //   'gray': '#8492a6',
     //   'gray-light': '#d3dce6',
     // },
+    screens:{
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px'
+  }
   },
   variants: {
     opacity: ({ after }) => after(['disabled']),
