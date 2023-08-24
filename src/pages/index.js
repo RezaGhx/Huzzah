@@ -76,7 +76,7 @@ export default function Home({ todos }) {
 export async function getServerSideProps(context) {
   dbConnect();
   const todos = await Todo.find({});
-  console.log(todos);
+
   return {
     props: {
       todos: JSON.parse(JSON.stringify(todos)),
