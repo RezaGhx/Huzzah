@@ -5,7 +5,6 @@ import { getTodoDetails } from 'pages/api/todos/[todoId]';
 import dbConnect from 'server/utils/dbConnect';
 
 export default function Details({ todo }) {
-  console.log(todo);
 
   return (
     <Layout>
